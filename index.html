@@ -15,7 +15,76 @@
   </head>
   <body>
     <div class="container">
-      <p>Current city</p>
+      <div class="headline" id="headline">
+        <span class="currentCity" id="current-city">Current city</span>
+        <span class="currentTemp" id="current-temp">18°C/F</span>
+      </div>
+
+      <span class="weatherIcon" id="weather-icon"></span>
+
+      <div class="currentData" id="currentData">
+        <form class="typeLocation" id="type-location">
+          <input
+            type="text"
+            placeholder="Type your location..."
+            class="location"
+            id="location"
+          />
+          <button>🔍</button>
+        </form>
+
+        <span class="date" id="date"> Thu, 22 April 9:30 am 2022 </span>
+
+        <span class="weatherState" id="weather-state">Clear sky</span>
+        <span class="hum" id="hum">Humidity: 45%</span>
+        <span class="wind" id="wind">Wind: 19 km/h</span>
+      </div>
+
+      <div class="time" id="time">
+        <p>00:00</p>
+        <p>04:00</p>
+        <p>08:00</p>
+        <p>12:00</p>
+        <p>16:00</p>
+        <p>20:00</p>
+        <p>24:00</p>
+      </div>
+
+      <div class="temp" id="temp">
+        <p>00:00</p>
+        <p>04:00</p>
+        <p>08:00</p>
+        <p>12:00</p>
+        <p>16:00</p>
+        <p>20:00</p>
+        <p>24:00</p>
+      </div>
+
+      <span class="weatherDiagram" id="weather-diagram"></span>
+
+      <div class="days" id="days">
+        <p>MON</p>
+        <p>TUE</p>
+        <p>WED</p>
+        <p>THU</p>
+        <p>FRI</p>
+      </div>
+
+      <div class="icons" id="icons">
+        <span class="cloudy" id="cloudy"></span>
+        <span class="sun" id="sun"></span>
+        <span class="cloudSun" id="cloudSun"></span>
+        <span class="cloudy" id="cloudy"></span>
+        <span class="rain" id="rain"></span>
+      </div>
+
+      <div class="forecast" id="forecast">
+        <p>13°C/10°C</p>
+        <p>13°C/10°C</p>
+        <p>13°C/10°C</p>
+        <p>13°C/10°C</p>
+        <p>13°C/10°C</p>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>
