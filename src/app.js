@@ -36,30 +36,39 @@ function formatDate(timestamp) {
 function displayTemperature(response) {
   let temperatureDisplay = document.querySelector("#temperature");
   temperatureDisplay.innerHTML = Math.round(response.data.main.temp);
+
   let cityDisplay = document.querySelector("#current-city");
   cityDisplay.innerHTML = response.data.name;
+
   let humidityDisplay = document.querySelector("#hum");
   humidityDisplay.innerHTML = `Humidity: ${Math.round(
     response.data.main.humidity
   )}%`;
+
   let windDisplay = document.querySelector("#wind");
   windDisplay.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
+
   let descriptionDisplay = document.querySelector("#weather-state");
   descriptionDisplay.innerHTML = response.data.weather[0].description;
+
   let dateTime = document.querySelector("#date");
   dateTime.innerHTML = formatDate(response.data.dt * 1000);
-  let iconDisplay = document.getElementsByClassName("sunny");
-  for (i = 0; i < iconDisplay.length; i++) {
-    iconDisplay[i].setAttribute(
-      "src",
-      "https://openweathermap.org/img/wn/01d@2x.png"
-    );
-  }
+
+  let iconDisplay = document.querySelector(".weatherIcon");
+  iconDisplay.setAttribute("src", `media/${response.data.weather[0].icon}.png`);
+  console.log(response.data.weather[0].icon);
 }
+//   if (response.data.weather[0].main === `Clouds`) {
+//     iconDisplay.setAttribute("src", "media/04n.png");
+//   } else {
+//     response.data.weather[0].main === `Rain`;
+//     iconDisplay.setAttribute("src", "media/10n.png");
+//   }
+// }
 
 let apiKey = "bada8b7e78b2e8f21ed242b93f56b802";
 let unit = "metric";
-let city = "Munich";
+let city = "Tokyo";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
 
 axios.get(apiUrl).then(displayTemperature);
