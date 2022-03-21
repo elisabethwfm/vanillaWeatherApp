@@ -48,11 +48,18 @@ function displayTemperature(response) {
   descriptionDisplay.innerHTML = response.data.weather[0].description;
   let dateTime = document.querySelector("#date");
   dateTime.innerHTML = formatDate(response.data.dt * 1000);
+  let iconDisplay = document.getElementsByClassName("sunny");
+  for (i = 0; i < iconDisplay.length; i++) {
+    iconDisplay[i].setAttribute(
+      "src",
+      "https://openweathermap.org/img/wn/01d@2x.png"
+    );
+  }
 }
 
 let apiKey = "bada8b7e78b2e8f21ed242b93f56b802";
 let unit = "metric";
-let city = "Vienna";
+let city = "Munich";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
 
 axios.get(apiUrl).then(displayTemperature);
