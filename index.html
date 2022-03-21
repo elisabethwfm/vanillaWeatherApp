@@ -30,14 +30,16 @@
             class="location"
             id="location"
           />
-          <button>🔍</button>
+          <button class="searchButton" id="search-button">🔍</button>
         </form>
 
-        <span class="date" id="date"> Thu, 22 April 9:30 am 2022 </span>
+        <span class="date" id="date"> Thu, 22 April 9:30am 2022 </span>
 
-        <span class="weatherState" id="weather-state">Clear sky</span>
-        <span class="hum" id="hum">Humidity: 45%</span>
-        <span class="wind" id="wind">Wind: 19 km/h</span>
+        <div class="currentState" id="currentState">
+          <div class="weatherState" id="weather-state">Clear sky</div>
+          <div class="hum" id="hum">Humidity: 45%</div>
+          <div class="wind" id="wind">Wind: 19 km/h</div>
+        </div>
       </div>
 
       <div class="time" id="time">
@@ -60,7 +62,9 @@
         <p>24:00</p>
       </div>
 
-      <span class="weatherDiagram" id="weather-diagram"></span>
+      <span class="weatherDiagram" id="weather-diagram">
+        <img src="media/diagram.png" alt="cloud" width="100%" />
+      </span>
 
       <div class="days" id="days">
         <p>MON</p>
@@ -71,11 +75,21 @@
       </div>
 
       <div class="icons" id="icons">
-        <span class="cloudy" id="cloudy"></span>
-        <span class="sun" id="sun"></span>
-        <span class="cloudSun" id="cloudSun"></span>
-        <span class="cloudy" id="cloudy"></span>
-        <span class="rain" id="rain"></span>
+        <span class="cloudy" id="cloudy"
+          ><img src="media/cloud.png" alt="cloud" width="110px"
+        /></span>
+        <span class="sun" id="sun"
+          ><img src="media/sun.png" alt="cloud" width="110px"
+        /></span>
+        <span class="cloudSun" id="cloudSun">
+          <img src="media/cloudsun.png" alt="cloud" width="110px" />
+        </span>
+        <span class="cloudy" id="cloudy">
+          <img src="media/cloud.png" alt="cloud" width="110px" />
+        </span>
+        <span class="rain" id="rain">
+          <img src="media/rain.png" alt="cloud" width="110px" />
+        </span>
       </div>
 
       <div class="forecast" id="forecast">
