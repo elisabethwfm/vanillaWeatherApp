@@ -56,12 +56,11 @@ function displayTemperature(response) {
 
   let iconDisplay = document.querySelector(".weatherIcon");
   iconDisplay.setAttribute("src", `media/${response.data.weather[0].icon}.png`);
-  console.log(response.data.weather[0].icon);
 }
 
 let apiKey = "bada8b7e78b2e8f21ed242b93f56b802";
 let unit = "metric";
-let city = "Tokyo";
+let city = "Lisbon";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
 
 axios.get(apiUrl).then(displayTemperature);
