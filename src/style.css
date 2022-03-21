@@ -127,6 +127,9 @@ body {
   letter-spacing: -0.02em;
   grid-column: span 2;
   align-self: center;
+}
+
+.weatherState {
   text-transform: capitalize;
 }
 

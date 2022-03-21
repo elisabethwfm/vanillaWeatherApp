@@ -9,7 +9,7 @@ function displayTemperature(response) {
     response.data.main.humidity
   )}%`;
   let windDisplay = document.querySelector("#wind");
-  windDisplay.innerHTML = `Wind: ${Math.round(response.data.wind.speed)}km/h`;
+  windDisplay.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
   let descriptionDisplay = document.querySelector("#weather-state");
   descriptionDisplay.innerHTML = response.data.weather[0].description;
 }
