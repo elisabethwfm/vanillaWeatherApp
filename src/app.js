@@ -58,13 +58,6 @@ function displayTemperature(response) {
   iconDisplay.setAttribute("src", `media/${response.data.weather[0].icon}.png`);
   console.log(response.data.weather[0].icon);
 }
-//   if (response.data.weather[0].main === `Clouds`) {
-//     iconDisplay.setAttribute("src", "media/04n.png");
-//   } else {
-//     response.data.weather[0].main === `Rain`;
-//     iconDisplay.setAttribute("src", "media/10n.png");
-//   }
-// }
 
 let apiKey = "bada8b7e78b2e8f21ed242b93f56b802";
 let unit = "metric";
