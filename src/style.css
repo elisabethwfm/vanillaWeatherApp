@@ -42,6 +42,24 @@ body {
   align-self: center;
 }
 
+.celsius {
+  transition: all 0.2s ease-in-out;
+}
+
+.celsius:hover {
+  cursor: pointer;
+  font-size: 50px;
+}
+
+.fahrenheit {
+  transition: all 0.2s ease-in-out;
+}
+
+.fahrenheit:hover {
+  cursor: pointer;
+  font-size: 50px;
+}
+
 .weatherIcon {
   background-image: url("../media/cloudsun.png");
   position: absolute;
@@ -86,6 +104,12 @@ body {
   line-height: 23px;
   align-items: center;
   letter-spacing: -0.02em;
+  transition: all 0.2s ease-in-out;
+}
+
+.searchButton:hover {
+  cursor: pointer;
+  opacity: 0.5;
 }
 
 .date {
