@@ -118,6 +118,10 @@ body {
   letter-spacing: -0.02em;
 }
 
+.temp {
+  padding-bottom: 20px;
+}
+
 .weatherDiagram {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
