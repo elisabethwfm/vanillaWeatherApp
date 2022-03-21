@@ -129,7 +129,7 @@ body {
   align-self: center;
 }
 
-.weatherState {
+.weatherState::first-letter {
   text-transform: capitalize;
 }
 
