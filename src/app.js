@@ -29,11 +29,11 @@ function formatDate(timestamp) {
     "December",
   ];
   let month = months[date.getMonth()];
+
   return `${day}, ${month} ${hours}:${minutes} ${year}`;
 }
 
 function displayTemperature(response) {
-  console.log(response.data);
   let temperatureDisplay = document.querySelector("#temperature");
   temperatureDisplay.innerHTML = Math.round(response.data.main.temp);
   let cityDisplay = document.querySelector("#current-city");
