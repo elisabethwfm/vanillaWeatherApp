@@ -90,12 +90,12 @@ function showPosition(position) {
   let apiKey = "bada8b7e78b2e8f21ed242b93f56b802";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?&lat=${lat}&lon=${lon}
 &appid=${apiKey}&units=${units}`;
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(displayTemperature);
 }
 
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-let currentLocation = document.querySelector("#currentLocation");
+let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", getCurrentPosition);
