@@ -93,6 +93,25 @@ body {
   letter-spacing: -0.02em;
 }
 
+.currentLocation {
+  position: relative;
+  left: 150px;
+  top: -31px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  line-height: 23px;
+  align-items: center;
+  letter-spacing: -0.02em;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.5;
+}
+
+.currentLocation:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
 .searchButton {
   position: relative;
   left: 230px;
@@ -104,11 +123,12 @@ body {
   align-items: center;
   letter-spacing: -0.02em;
   transition: all 0.2s ease-in-out;
+  opacity: 0.5;
 }
 
 .searchButton:hover {
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .date {

@@ -17,7 +17,8 @@
   <body>
     <div class="container">
       <div class="headline" id="headline">
-        <span class="currentCity" id="current-city">Current city</span>
+        <span class="currentCity" id="current-city">City</span>
+
         <div class="currentTemp" id="current-temp">
           <span class="temperature" id="temperature">18</span
           ><span class="celsius" id="celsius">°C</span>/<span
@@ -33,14 +34,15 @@
       </div>
 
       <div class="currentData" id="currentData">
-        <form class="typeLocation" id="type-location">
+        <form class="typeLocation" id="type-location-form">
           <input
             type="text"
             placeholder="Type your location..."
             class="location"
-            id="location"
+            id="location-input"
           />
           <button class="searchButton" id="search-button">🔍</button>
+          <button class="currentLocation" id="current-location">🎯</button>
         </form>
 
         <span class="date" id="date">Thu, 22 April 9:30am 2022</span>

@@ -1,3 +1,4 @@
+// get date
 function formatDate(timestamp) {
   let date = new Date(timestamp);
 
@@ -33,6 +34,29 @@ function formatDate(timestamp) {
   return `${day}, ${month} ${hours}:${minutes} ${year}`;
 }
 
+// type in location and start event
+let cityForm = document.querySelector("#type-location-form");
+cityForm.addEventListener("submit", button);
+
+function button(event) {
+  event.preventDefault();
+  let city = document.querySelector("#current-city");
+  let cityInput = document.querySelector("#location-input");
+  city.innerHTML = cityInput.value;
+  citySearch(event);
+}
+
+function citySearch(event) {
+  event.preventDefault();
+  let units = "metric";
+  let apiKey = "bada8b7e78b2e8f21ed242b93f56b802";
+  let city = document.querySelector("#location").value;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}
+&appid=${apiKey}&units=${units}`;
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(displayTemperature);
+}
+
+//temperature display
 function displayTemperature(response) {
   let temperatureDisplay = document.querySelector("#temperature");
   temperatureDisplay.innerHTML = Math.round(response.data.main.temp);
@@ -58,9 +82,20 @@ function displayTemperature(response) {
   iconDisplay.setAttribute("src", `media/${response.data.weather[0].icon}.png`);
 }
 
-let apiKey = "bada8b7e78b2e8f21ed242b93f56b802";
-let unit = "metric";
-let city = "Lisbon";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+//current location
+function showPosition(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let units = "metric";
+  let apiKey = "bada8b7e78b2e8f21ed242b93f56b802";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?&lat=${lat}&lon=${lon}
+&appid=${apiKey}&units=${units}`;
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+function getCurrentPosition() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+let currentLocation = document.querySelector("#currentLocation");
+currentLocation.addEventListener("click", getCurrentPosition);
