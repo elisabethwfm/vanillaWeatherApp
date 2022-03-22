@@ -51,6 +51,10 @@ body {
   font-size: 50px;
 }
 
+.currentTemp .inactive {
+  color: rgba(0, 0, 0, 0.657);
+}
+
 .fahrenheit {
   transition: all 0.2s ease-in-out;
 }

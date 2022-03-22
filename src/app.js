@@ -106,8 +106,10 @@ currentLocation.addEventListener("click", getCurrentPosition);
 function changeTempF(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  let fahrenheitTemp = celsiusTemperature * 1.8 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  celsiusTemp.classList.add("inactive");
+  fahrenheitTemp.classList.remove("inactive");
+  let fahrenheitTemperature = celsiusTemperature * 1.8 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 let fahrenheitTemp = document.querySelector("#fahrenheit");
 fahrenheitTemp.addEventListener("click", changeTempF);
@@ -117,6 +119,8 @@ let celsiusTemperature = null;
 function changeTempC(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  celsiusTemp.classList.remove("inactive");
+  fahrenheitTemp.classList.add("inactive");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 let celsiusTemp = document.querySelector("#celsius");
