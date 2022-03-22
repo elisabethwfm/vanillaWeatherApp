@@ -83,7 +83,7 @@ function displayTemperature(response) {
 }
 
 //current location
-function showPosition(position) {
+function displayPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let units = "metric";
@@ -94,8 +94,29 @@ function showPosition(position) {
 }
 
 function getCurrentPosition() {
-  navigator.geolocation.getCurrentPosition(showPosition);
+  navigator.geolocation.getCurrentPosition(displayPosition);
 }
 
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", getCurrentPosition);
+
+// unit conversion
+function changeTempF(event, response) {
+  event.preventDefault();
+  alert("hallo");
+  // let cInput = Math.round(response.data.main.temp);
+  // let fInput = cInput * 1.8 + 32;
+  // temperature.innerHTML = Math.round(fInput);
+}
+let fahrenheitTemp = document.querySelector("#fahrenheit");
+fahrenheitTemp.addEventListener("click", changeTempF);
+
+function changeTempC(event, response) {
+  event.preventDefault();
+  let fahrenheit = document.querySelector("#celsius");
+  let temperature = document.querySelector("#temperature");
+  let cInput = Math.round(response.data.main.temp);
+  temperature.innerHTML = Math.round(cInput);
+}
+let celsiusTemp = document.querySelector("#celsius");
+celsiusTemp.addEventListener("click", changeTempC);
