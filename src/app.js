@@ -62,7 +62,7 @@ function displayTemperature(response) {
   temperatureDisplay.innerHTML = Math.round(response.data.main.temp);
 
   let cityDisplay = document.querySelector("#current-city");
-  cityDisplay.innerHTML = response.data.name;
+  cityDisplay.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
 
   let humidityDisplay = document.querySelector("#hum");
   humidityDisplay.innerHTML = `Humidity: ${Math.round(
@@ -82,6 +82,17 @@ function displayTemperature(response) {
   iconDisplay.setAttribute("src", `media/${response.data.weather[0].icon}.png`);
 
   celsiusTemperature = response.data.main.temp;
+  console.log(response.data);
+
+  getForecast(response.data.coord);
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let units = "metric";
+  let apiKey = "bada8b7e78b2e8f21ed242b93f56b802";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 //current location
@@ -127,7 +138,8 @@ let celsiusTemp = document.querySelector("#celsius");
 celsiusTemp.addEventListener("click", changeTempC);
 
 // multiplying forecast and remove content from html
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast-wrapper");
   let days = ["THU", "FRI", "SAT", "SUN", "MON"];
 
@@ -155,4 +167,3 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-displayForecast();
