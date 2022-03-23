@@ -127,3 +127,31 @@ let celsiusTemp = document.querySelector("#celsius");
 celsiusTemp.addEventListener("click", changeTempC);
 
 // multiplying forecast
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast-wrapper");
+  let forecastHTML = `<div class="testGrid">`;
+  let days = ["THU", "FRI", "SAT", "SUN", "MON"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="testGrid">
+        <div class="forecastGrid" id="forecastGrid">
+          <div class="days" id="days">
+            <p>MON</p>
+          </div>
+          <div class="icons" id="icons">
+            <span class="cloudy" id="cloudy"
+              ><img class="sunny" src="media/04n.png" alt="cloud" width="110px"
+            /></span>
+          </div>
+          <div class="forecast" id="forecast">
+            <p>13°C/10°C</p>
+          </div>
+        </div>
+      </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();

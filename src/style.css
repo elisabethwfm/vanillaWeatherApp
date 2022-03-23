@@ -181,36 +181,47 @@ body {
   padding-bottom: 20px;
 }
 
-.days {
+.testGrid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.forecastGrid {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .forecastGrid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 76px;
-  grid-gap: 20px;
+  grid-template-rows: repeat(3, 1fr);
+} */
+
+.days {
   font-size: 36px;
-  line-height: 42px;
-  align-items: center;
-  text-align: center;
   letter-spacing: -0.015em;
 }
 
 .icons {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 76px;
-  grid-gap: 20px;
-  align-items: center;
+  margin: 0px auto 20px;
 }
 
 .forecast {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 50px;
-  grid-gap: 20px;
   font-size: 20px;
   line-height: 23px;
   align-items: center;
   text-align: center;
   letter-spacing: -0.02em;
+}
+
+.days p {
+  text-align: center;
+  margin: 20px;
+}
+
+.forecast p {
+  margin-top: 0px;
 }
 
 p {
