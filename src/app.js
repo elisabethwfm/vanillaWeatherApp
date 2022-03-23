@@ -137,7 +137,7 @@ function displayForecast() {
       `<div class="testGrid">
         <div class="forecastGrid" id="forecastGrid">
           <div class="days" id="days">
-            <p>MON</p>
+            <p>${day}</p>
           </div>
           <div class="icons" id="icons">
             <span class="cloudy" id="cloudy"
