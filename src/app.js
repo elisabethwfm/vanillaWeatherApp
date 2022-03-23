@@ -125,3 +125,5 @@ function changeTempC(event) {
 }
 let celsiusTemp = document.querySelector("#celsius");
 celsiusTemp.addEventListener("click", changeTempC);
+
+// multiplying forecast
