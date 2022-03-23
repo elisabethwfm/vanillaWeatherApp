@@ -126,7 +126,7 @@ function changeTempC(event) {
 let celsiusTemp = document.querySelector("#celsius");
 celsiusTemp.addEventListener("click", changeTempC);
 
-// multiplying forecast
+// multiplying forecast and remove content from html
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast-wrapper");
   let forecastHTML = `<div class="testGrid">`;
