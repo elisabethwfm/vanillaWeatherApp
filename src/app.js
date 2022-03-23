@@ -129,8 +129,9 @@ celsiusTemp.addEventListener("click", changeTempC);
 // multiplying forecast and remove content from html
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast-wrapper");
-  let forecastHTML = `<div class="testGrid">`;
   let days = ["THU", "FRI", "SAT", "SUN", "MON"];
+
+  let forecastHTML = `<div class="testGrid">`;
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
