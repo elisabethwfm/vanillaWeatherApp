@@ -137,25 +137,29 @@ celsiusTemp.addEventListener("click", changeTempC);
 
 // multiplying forecast and remove content from html
 function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast-wrapper");
-  let days = ["THU", "FRI", "SAT", "SUN", "MON"];
 
   let forecastHTML = `<div class="testGrid">`;
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `<div class="testGrid">
         <div class="forecastGrid" id="forecastGrid">
           <div class="days" id="days">
-            <p>${day}</p>
+            <p>${forecastDay.dt}</p>
           </div>
           <div class="icons" id="icons">
             <span class="cloudy" id="cloudy"
-              ><img class="sunny" src="media/04n.png" alt="cloud" width="110px"
+              ><img class="sunny" src="media/${
+                forecastDay.weather[0].icon
+              }.png" alt="cloud" width="110px"
             /></span>
           </div>
           <div class="forecast" id="forecast">
-            <p>13°C/10°C</p>
+            <p>${Math.round(forecastDay.temp.max)}°C/${Math.round(
+        forecastDay.temp.min
+      )}°C</p>
           </div>
         </div>
       </div>`;
