@@ -79,6 +79,12 @@ function displayTemperature(response) {
   let iconDisplay = document.querySelector(".weatherIcon");
   iconDisplay.setAttribute("src", `media/${response.data.weather[0].icon}.png`);
 
+  let backgroundDisplay = document.querySelector(".backgroundImg");
+  backgroundDisplay.setAttribute(
+    "src",
+    `media/${response.data.weather[0].icon}.png`
+  );
+
   celsiusTemperature = response.data.main.temp;
 
   getForecast(response.data.coord);
@@ -117,14 +123,6 @@ function changeTempF(event) {
   fahrenheitTemp.classList.remove("inactive");
   let fahrenheitTemperature = celsiusTemperature * 1.8 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-
-  let minTempElement = document.querySelector("#min-temp");
-  let fahrenheitMinTemperature = celsiusTemperature * 1.8 + 32;
-  minTempElement.innerHTML = Math.round(fahrenheitMinTemperature);
-
-  let maxTempElement = document.querySelector("#max-temp");
-  let fahrenheitMaxTemperature = celsiusTemperature * 1.8 + 32;
-  maxTempElement.innerHTML = Math.round(fahrenheitMaxTemperature);
 }
 let fahrenheitTemp = document.querySelector("#fahrenheit");
 fahrenheitTemp.addEventListener("click", changeTempF);
@@ -137,14 +135,6 @@ function changeTempC(event) {
   celsiusTemp.classList.remove("inactive");
   fahrenheitTemp.classList.add("inactive");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-
-  let minTempElement = document.querySelector("#min-temp");
-  let celsiusMinTemperature = celsiusTemperature;
-  minTempElement.innerHTML = Math.round(celsiusMinTemperature);
-
-  let maxTempElement = document.querySelector("#max-temp");
-  let celsiusMaxTemperature = celsiusTemperature;
-  maxTempElement.innerHTML = Math.round(celsiusMaxTemperature);
 }
 let celsiusTemp = document.querySelector("#celsius");
 celsiusTemp.addEventListener("click", changeTempC);

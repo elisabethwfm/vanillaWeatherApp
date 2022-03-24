@@ -5,9 +5,9 @@ html {
 body {
   font-family: "Work Sans", sans-serif;
   background: linear-gradient(
-    109.6deg,
-    #bcd9ff 11.2%,
-    rgb(237, 246, 250) 100.2%
+    181.2deg,
+    rgb(181, 239, 249) 10.5%,
+    rgb(254, 254, 254) 86.8%
   );
   background-repeat: no-repeat;
   min-height: 100%;
@@ -15,13 +15,12 @@ body {
 }
 
 .backgroundImg {
-  object-fit: cover;
-  object-position: 500px -400px;
-  display: block;
-  margin: 0 0 0 auto;
-  /* border: 1px solid #000; */
-  width: 90%;
-  height: 705px;
+  position: absolute;
+  width: 35%;
+  right: 57%;
+  top: 2%;
+  z-index: 0;
+  object-fit: contain;
 }
 
 .container {
@@ -29,13 +28,12 @@ body {
   width: 650px;
   height: fit-content;
   padding: 20px;
-  margin: 50px auto;
+  margin: 200px auto 0px;
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 5px;
 }
 
 .headline {
@@ -194,12 +192,6 @@ body {
   align-items: center;
   text-align: center;
   letter-spacing: -0.02em;
-}
-
-.hourlyForecast {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 .temp {
