@@ -135,19 +135,29 @@ function changeTempC(event) {
 let celsiusTemp = document.querySelector("#celsius");
 celsiusTemp.addEventListener("click", changeTempC);
 
+// format the input from the api to an ouput that shows the days
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+  return days[day];
+}
+
 // multiplying forecast and remove content from html
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast-wrapper");
 
   let forecastHTML = `<div class="testGrid">`;
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="testGrid">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="testGrid">
         <div class="forecastGrid" id="forecastGrid">
           <div class="days" id="days">
-            <p>${forecastDay.dt}</p>
+            <p>${formatDay(forecastDay.dt)}</p>
           </div>
           <div class="icons" id="icons">
             <span class="cloudy" id="cloudy"
@@ -158,11 +168,12 @@ function displayForecast(response) {
           </div>
           <div class="forecast" id="forecast">
             <p>${Math.round(forecastDay.temp.max)}°C/${Math.round(
-        forecastDay.temp.min
-      )}°C</p>
+          forecastDay.temp.min
+        )}°C</p>
           </div>
         </div>
       </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
