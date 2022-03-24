@@ -117,6 +117,14 @@ function changeTempF(event) {
   fahrenheitTemp.classList.remove("inactive");
   let fahrenheitTemperature = celsiusTemperature * 1.8 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+
+  let minTempElement = document.querySelector("#min-temp");
+  let fahrenheitMinTemperature = celsiusTemperature * 1.8 + 32;
+  minTempElement.innerHTML = Math.round(fahrenheitMinTemperature);
+
+  let maxTempElement = document.querySelector("#max-temp");
+  let fahrenheitMaxTemperature = celsiusTemperature * 1.8 + 32;
+  maxTempElement.innerHTML = Math.round(fahrenheitMaxTemperature);
 }
 let fahrenheitTemp = document.querySelector("#fahrenheit");
 fahrenheitTemp.addEventListener("click", changeTempF);
@@ -129,6 +137,14 @@ function changeTempC(event) {
   celsiusTemp.classList.remove("inactive");
   fahrenheitTemp.classList.add("inactive");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+  let minTempElement = document.querySelector("#min-temp");
+  let celsiusMinTemperature = celsiusTemperature;
+  minTempElement.innerHTML = Math.round(celsiusMinTemperature);
+
+  let maxTempElement = document.querySelector("#max-temp");
+  let celsiusMaxTemperature = celsiusTemperature;
+  maxTempElement.innerHTML = Math.round(celsiusMaxTemperature);
 }
 let celsiusTemp = document.querySelector("#celsius");
 celsiusTemp.addEventListener("click", changeTempC);
@@ -165,10 +181,10 @@ function displayForecast(response) {
           </div>
           <div class="forecast" id="forecast">
           <span class="maxTemp" id="max-temp">
-            <p>${Math.round(forecastDay.temp.max)}</span>°
+            ${Math.round(forecastDay.temp.max)}</span>°
                <span class="minTemp" id="min-temp">${Math.round(
                  forecastDay.temp.min
-               )}°</p>
+               )}°
           </span></div>
         </div>
       </div>`;

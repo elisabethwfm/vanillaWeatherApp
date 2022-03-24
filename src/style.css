@@ -1,17 +1,41 @@
+html {
+  height: fit-content;
+}
+
 body {
   font-family: "Work Sans", sans-serif;
-  background-color: #e2e8f052;
+  background: linear-gradient(
+    109.6deg,
+    #bcd9ff 11.2%,
+    rgb(237, 246, 250) 100.2%
+  );
+  background-repeat: no-repeat;
+  min-height: 100%;
+  margin: 0;
+}
+
+.backgroundImg {
+  object-fit: cover;
+  object-position: 500px -400px;
+  display: block;
+  margin: 0 0 0 auto;
+  /* border: 1px solid #000; */
+  width: 90%;
+  height: 705px;
 }
 
 .container {
-  background-color: #e2e8f0;
   position: relative;
   width: 650px;
   height: fit-content;
   padding: 20px;
   margin: 50px auto;
-  box-shadow: 0px 0px 0px 1px #c8e3ff, 0px 0px 0px 20px #fff,
-    0px 0px 0px 21px #e5e5e5, 0px 0px 10px 15px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .headline {
@@ -95,6 +119,9 @@ body {
   line-height: 23px;
   align-items: center;
   letter-spacing: -0.02em;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.479);
+  border-radius: 3px;
 }
 
 .currentLocation {
