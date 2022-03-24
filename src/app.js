@@ -82,13 +82,11 @@ function displayTemperature(response) {
   iconDisplay.setAttribute("src", `media/${response.data.weather[0].icon}.png`);
 
   celsiusTemperature = response.data.main.temp;
-  console.log(response.data);
 
   getForecast(response.data.coord);
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let units = "metric";
   let apiKey = "bada8b7e78b2e8f21ed242b93f56b802";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
@@ -139,7 +137,6 @@ celsiusTemp.addEventListener("click", changeTempC);
 
 // multiplying forecast and remove content from html
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast-wrapper");
   let days = ["THU", "FRI", "SAT", "SUN", "MON"];
 
