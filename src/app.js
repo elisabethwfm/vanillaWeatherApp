@@ -40,17 +40,17 @@ cityForm.addEventListener("submit", button);
 
 function button(event) {
   event.preventDefault();
-  let city = document.querySelector("#current-city");
-  let cityInput = document.querySelector("#location-input");
-  city.innerHTML = cityInput.value;
-  citySearch(event);
+  let cityElement = document.querySelector("#current-city");
+  let cityElementInput = document.querySelector("#location-input");
+  citySearch(cityElementInput.value);
 }
 
-function citySearch(event) {
-  event.preventDefault();
+citySearch("Paris");
+
+function citySearch(city) {
   let units = "metric";
   let apiKey = "bada8b7e78b2e8f21ed242b93f56b802";
-  let city = document.querySelector("#location-input").value;
+  let cityInputValue = document.querySelector("#location-input").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}
 &appid=${apiKey}&units=${units}`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(displayTemperature);
@@ -148,7 +148,7 @@ function formatDay(timestamp) {
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast-wrapper");
-
+  console.log(response.data.hourly);
   let forecastHTML = `<div class="testGrid">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
@@ -178,4 +178,24 @@ function displayForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+// add 4 hour forecast for the day
+function displayHourlyForecast(response) {
+  let forecastHour = response.data.hourly;
+  let forecastHourElement = document.querySelector("#hour-wrapper");
+
+  let forecastHourHTML = `<div class="hourlyForecast" id="hourly-forecast>`;
+  forecastHour.forEach(function (forecastHour) {
+    forecastHourHTML =
+      forecastHourHTML +
+      `<div class="hourlyForecast" id="hourly-forecast">
+          <div class="temp" id="temp">
+            <p>10°C</p>
+          </div>
+        </div>`;
+  });
+
+  forecastHourHTML = forecastHourHTML + `</div>`;
+  forecastHourElement.innerHTML = forecastHourHTML;
 }
