@@ -45,8 +45,6 @@ function button(event) {
   citySearch(cityElementInput.value);
 }
 
-citySearch("Paris");
-
 function citySearch(city) {
   let units = "metric";
   let apiKey = "bada8b7e78b2e8f21ed242b93f56b802";
@@ -148,7 +146,6 @@ function formatDay(timestamp) {
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast-wrapper");
-  console.log(response.data.hourly);
   let forecastHTML = `<div class="testGrid">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
@@ -167,10 +164,12 @@ function displayForecast(response) {
             /></span>
           </div>
           <div class="forecast" id="forecast">
-            <p>${Math.round(forecastDay.temp.max)}°C/${Math.round(
-          forecastDay.temp.min
-        )}°C</p>
-          </div>
+          <span class="maxTemp" id="max-temp">
+            <p>${Math.round(forecastDay.temp.max)}</span>°
+               <span class="minTemp" id="min-temp">${Math.round(
+                 forecastDay.temp.min
+               )}°</p>
+          </span></div>
         </div>
       </div>`;
     }
@@ -180,22 +179,4 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-// add 4 hour forecast for the day
-function displayHourlyForecast(response) {
-  let forecastHour = response.data.hourly;
-  let forecastHourElement = document.querySelector("#hour-wrapper");
-
-  let forecastHourHTML = `<div class="hourlyForecast" id="hourly-forecast>`;
-  forecastHour.forEach(function (forecastHour) {
-    forecastHourHTML =
-      forecastHourHTML +
-      `<div class="hourlyForecast" id="hourly-forecast">
-          <div class="temp" id="temp">
-            <p>10°C</p>
-          </div>
-        </div>`;
-  });
-
-  forecastHourHTML = forecastHourHTML + `</div>`;
-  forecastHourElement.innerHTML = forecastHourHTML;
-}
+citySearch("Vienna");

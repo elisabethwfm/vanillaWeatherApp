@@ -7,7 +7,7 @@ body {
   background-color: #e2e8f0;
   position: relative;
   width: 650px;
-  height: 590px;
+  height: fit-content;
   padding: 20px;
   margin: 50px auto;
   box-shadow: 0px 0px 0px 1px #c8e3ff, 0px 0px 0px 20px #fff,
@@ -150,14 +150,14 @@ body {
   letter-spacing: -0.02em;
   grid-column: span 2;
   align-self: center;
+  text-align: center;
 }
 
 .weatherState::first-letter {
   text-transform: capitalize;
 }
 
-.time,
-.temp {
+.time {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: 50px;
@@ -169,8 +169,19 @@ body {
   letter-spacing: -0.02em;
 }
 
+.hourlyForecast {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .temp {
   padding-bottom: 20px;
+  font-size: 20px;
+  line-height: 23px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.02em;
 }
 
 .weatherDiagram {
@@ -191,12 +202,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-/* .forecastGrid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-} */
 
 .days {
   font-size: 36px;
@@ -234,4 +239,13 @@ p {
 a {
   text-decoration: none;
   color: #00a6ed;
+}
+
+.maxTemp {
+  font-weight: bold;
+}
+
+.minTemp {
+  opacity: 0.5;
+  font-weight: normal;
 }
