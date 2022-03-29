@@ -15,11 +15,12 @@
     <title>Weather app</title>
   </head>
   <body>
-    <img src="media/01d.png" alt="" class="backgroundImg" />
+    <div class="pictureBg">
+      <img src="media/01d.png" alt="" class="backgroundImg" />
+    </div>
     <div class="container">
       <div class="headline" id="headline">
         <span class="currentCity" id="current-city">City</span>
-
         <div class="currentTemp" id="current-temp">
           <span class="temperature" id="temperature">18</span
           ><span class="celsius" id="celsius">°C</span>/<span
@@ -29,11 +30,9 @@
           >
         </div>
       </div>
-
       <div>
         <img class="weatherIcon" src="media/02n.png" alt="cloudSun" />
       </div>
-
       <div class="currentData" id="currentData">
         <form class="typeLocation" id="type-location-form">
           <input
@@ -45,16 +44,13 @@
           <button class="searchButton" id="search-button">🔍</button>
           <button class="currentLocation" id="current-location">🎯</button>
         </form>
-
         <span class="date" id="date">Thu, 22 April 9:30am 2022</span>
-
         <div class="currentState" id="currentState">
           <div class="weatherState" id="weather-state">Clear sky</div>
           <div class="hum" id="hum">Humidity: 45%</div>
           <div class="wind" id="wind">Wind: 19 km/h</div>
         </div>
       </div>
-
       <!-- <div class="time" id="time">
         <p>00:00</p>
         <p>04:00</p>
@@ -65,25 +61,25 @@
         <p>24:00</p>
       </div>
       <div class="hourWrapper" id="hour-wrapper"></div> -->
-
       <!-- <span class="weatherDiagram" id="weather-diagram">
         <img src="media/diagram.png" alt="diagram" width="100%" />
       </span> -->
-
       <div id="forecast-wrapper"></div>
     </div>
-    <p>
-      <a
-        href="https://github.com/elisabethwfm/vanillaWeatherApp"
-        target="_blank"
-        >Open-source code </a
-      >by
-      <a
-        href="https://www.linkedin.com/in/elisabeth-wolfram-8736441a8/"
-        target="_blank"
-        >Elisabeth Wolfram</a
-      >
-    </p>
+    <div class="test">
+      <p>
+        <a
+          href="https://github.com/elisabethwfm/vanillaWeatherApp"
+          target="_blank"
+          >Open-source code </a
+        >by
+        <a
+          href="https://www.linkedin.com/in/elisabeth-wolfram-8736441a8/"
+          target="_blank"
+          >Elisabeth Wolfram</a
+        >
+      </p>
+    </div>
     <script src="src/app.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 html {
-  height: fit-content;
+  height: 100%;
 }
 
 body {
@@ -10,30 +10,36 @@ body {
     rgb(254, 254, 254) 86.8%
   );
   background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100%;
   margin: 0;
-}
-
-.backgroundImg {
-  position: absolute;
-  width: 35%;
-  right: 57%;
-  top: 2%;
-  z-index: 0;
-  object-fit: contain;
 }
 
 .container {
   position: relative;
   width: 650px;
   height: fit-content;
-  padding: 20px;
   margin: 200px auto 0px;
+  padding: 20px;
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 5px;
+}
+
+.pictureBg {
+  position: relative;
+  width: 650px;
+  height: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.backgroundImg {
+  position: absolute;
+  width: 80%;
+  margin: 20px -275px;
 }
 
 .headline {
@@ -249,6 +255,13 @@ body {
 
 .forecast p {
   margin-top: 0px;
+}
+
+.test {
+  width: 650px;
+  height: fit-content;
+  padding: 20px;
+  margin: 0 auto;
 }
 
 p {
