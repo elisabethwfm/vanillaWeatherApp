@@ -53,17 +53,18 @@ body {
 .currentCity {
   grid-column: span 3;
   font-weight: 400;
-  font-size: 47px;
+  font-size: 44px;
   line-height: 50px;
   align-items: center;
   letter-spacing: -0.015em;
   align-self: center;
+  word-break: break-word;
 }
 
 .currentTemp {
   grid-column: span 3;
   font-weight: 400;
-  font-size: 47px;
+  font-size: 44px;
   line-height: 50px;
   align-items: center;
   letter-spacing: -0.015em;
